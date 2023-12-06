@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 6s
+
+scrape_configs:
+    - job_name: "api-gestao-vagas"
+      metrics_path: "/actuator/prometheus"
+      static_configs:
+        - targets: ["host.docker.internal:8080"]
+          labels:
+            application: "api-gestao-vagas"
